@@ -1,0 +1,467 @@
+<!DOCTYPE html><html lang="ja"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI活用セミナー：大吉さんの業務効率化ストーリー</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #FAFAFA;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #009688);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #4CAF50;
+        }
+        
+        .section h2 {
+            color: #4CAF50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h3 {
+            color: #009688;
+            font-size: 1.4em;
+            margin: 20px 0 15px 0;
+            border-bottom: 2px solid #009688;
+            padding-bottom: 5px;
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .icon-goal { background: #9575CD; color: white; }
+        .icon-character { background: #FFC107; color: #333; }
+        .icon-story { background: #E91E63; color: white; }
+        .icon-tech { background: #009688; color: white; }
+        
+        .character-card {
+            background: linear-gradient(135deg, #FFC107, #FFE082);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #FF8F00;
+        }
+        
+        .character-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #E65100;
+            margin-bottom: 10px;
+        }
+        
+        .story-episode {
+            background: linear-gradient(135deg, #E91E63, #F48FB1);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .story-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .tech-highlight {
+            background: linear-gradient(135deg, #009688, #4DB6AC);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .workflow-section {
+            background: #F3E5F5;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #9575CD;
+        }
+        
+        .tip-box {
+            background: #E8F5E8;
+            border: 2px solid #4CAF50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .tip-box:before {
+            content: "💡";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #FFC107 0%, transparent 50%);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .step-number {
+            background: #9575CD;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        .code-block {
+            background: #2D3748;
+            color: #E2E8F0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+                margin: 20px 0;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'base',
+                securityLevel: 'loose',
+                fontFamily: '"Helvetica Neue", Arial, sans-serif',
+                themeVariables: {
+                    primaryColor: '#4CAF50',
+                    primaryTextColor: '#fff',
+                    primaryBorderColor: '#009688',
+                    lineColor: '#9575CD',
+                    secondaryColor: '#FFC107',
+                    tertiaryColor: '#E91E63'
+                },
+                flowchart: {
+                    cornerRadius: 15,
+                    curve: 'cardinal',
+                    htmlLabels: true
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 AI活用セミナー</h1>
+            <div class="subtitle">大吉さんと学ぶ実践的業務効率化ストーリー</div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon icon-goal">🎯</span>セミナーの目的と構成</h2>
+            
+            <h3>📋 解説方法の3ステップ</h3>
+            <div class="workflow-section">
+                <div class="mermaid">
+                    graph LR
+                        A[文章・記事の要素分解] --&gt; B[見出し作成]
+                        B --&gt; C[詳細説明]
+                        C --&gt; D[結論]
+                        C --&gt; E[背景]
+                        C --&gt; F[具体例]
+                        C --&gt; G[例え話]
+                        
+                        style A fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+                        style B fill:#009688,stroke:#333,stroke-width:2px,color:#fff
+                        style C fill:#9575CD,stroke:#333,stroke-width:2px,color:#fff
+                </div>
+            </div>
+
+            <h3>🎯 参加者の目標</h3>
+            <div class="tip-box">
+                <p><strong>初心者の方：</strong> AIツールの基本的な活用方法を体験し、「こんなことができるんだ！」という気づきを得る</p>
+                <p><strong>既に活用されている方：</strong> 新しい使い方や応用テクニックを発見し、業務効率をさらに向上させる</p>
+                <p><strong>共通目標：</strong> 小さな成功体験を一つでも持ち帰り、明日から実践できるスキルを習得する</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon icon-character">👤</span>主人公紹介</h2>
+            
+            <div class="character-card">
+                <div class="character-name">🍀 未来大吉（みらい だいきち）さん</div>
+                <p><strong>職業：</strong> 大手メーカーの営業部課長</p>
+                <p><strong>役職：</strong> プレイングマネージャー</p>
+                <p><strong>性格：</strong> 真面目で責任感が強い、チーム思いのリーダー</p>
+                <p><strong>AIスキル：</strong> ChatGPTを少し触ったことがある程度の初心者</p>
+                <p><strong>特徴：</strong> 「永遠の初心者」として、皆さんと一緒に成長していく存在</p>
+                <p><strong>趣味：</strong> 中華料理（特に餃子が好き）</p>
+            </div>
+
+            <div class="tip-box">
+                <p><strong>なぜ「大吉」という名前？</strong></p>
+                <p>縁起の良い名前で、ポジティブな気持ちでセミナーに参加していただきたいという想いを込めています。また、覚えやすく親しみやすいキャラクターとして設定しました。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon icon-story">📖</span>第1話：タスク管理の悩み</h2>
+            
+            <div class="story-episode">
+                <div class="story-title">🌅 朝から積んだやることの山</div>
+                <p>今日も朝から大吉さんは大量のタスクに埋もれています：</p>
+                <ul style="color: white; margin-top: 10px;">
+                    <li>📄 午前中：資料作成</li>
+                    <li>📋 午後1時：クライアント提出物</li>
+                    <li>✅ 夕方まで：部下の評価シート確認</li>
+                    <li>🤝 その合間：打ち合わせ2件</li>
+                </ul>
+                <p style="margin-top: 15px; font-weight: bold;">「どれから手をつければいいんだろう...」と頭を抱える大吉さん</p>
+            </div>
+
+            <h3>💡 解決策：ChatGPTでタスク整理</h3>
+            
+            <div class="tech-highlight">
+                <h4>🎙️ 音声入力の活用</h4>
+                <p><strong>おすすめの音声入力ツール：</strong></p>
+                <ul style="color: white;">
+                    <li><strong>Mac：</strong> ファンクションキーを素早く2回押し</li>
+                    <li><strong>Chrome拡張：</strong> Voice In、Aqualvoice</li>
+                    <li><strong>話題のツール：</strong> スーパーウィスパー</li>
+                </ul>
+            </div>
+
+            <div class="workflow-section">
+                <h4>📝 実践プロンプト例</h4>
+                <div class="code-block">
+今日片付けなければならない大量のタスクがあります。
+・午前中に資料作成
+・午後1時にクライアント提出物
+・夕方までに部下の評価シートの確認
+・その合間に打ち合わせが2件
+
+どの順番でやっていいか分からず軽くパニックになっています。
+効率よくこれらを行うための優先順位とタイムスケジュールを教えてください。
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <p><strong>🛡️ 使用上の注意点</strong></p>
+                <ul>
+                    <li>オプトアウト設定で秘密情報の学習データ利用を防ぐ</li>
+                    <li>機密・個人情報は入力しない</li>
+                    <li>出力内容のハルシネーション（幻覚）を検証する</li>
+                    <li>著作権・知的財産権の確認を行う</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon icon-tech">🔧</span>Geminiの拡張機能活用</h2>
+            
+            <div class="workflow-section">
+                <h3>🔗 Google連携機能の威力</h3>
+                <div class="mermaid">
+                    graph TD
+                        A[Gemini] --&gt; B[@カレンダー]
+                        A --&gt; C[@ToDoリスト]
+                        A --&gt; D[@YouTube]
+                        A --&gt; E[@Gmail]
+                        
+                        B --&gt; F[予定確認・調整]
+                        C --&gt; G[タスク管理]
+                        D --&gt; H[動画要約]
+                        E --&gt; I[メール作成]
+                        
+                        style A fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+                        style B fill:#FFC107,stroke:#333,stroke-width:2px
+                        style C fill:#FFC107,stroke:#333,stroke-width:2px
+                        style D fill:#FFC107,stroke:#333,stroke-width:2px
+                        style E fill:#FFC107,stroke:#333,stroke-width:2px
+                </div>
+            </div>
+
+            <h3>💼 実際の使用例</h3>
+            <div class="tech-highlight">
+                <p><strong>使い方：</strong> @マークを押すと連携可能なツールが表示される</p>
+                <p><strong>メリット：</strong> 予定とタスクを同時に確認でき、抜け漏れが大幅に減少</p>
+                <p><strong>応用：</strong> YouTubeのURLを貼ると動画内容の要約も可能</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon icon-tech">⚡</span>ChatGPT効率化テクニック</h2>
+            
+            <div class="tip-box">
+                <h3>🔧 必須Chrome拡張機能</h3>
+                <p><strong>ChatGPT Ctrl+Enter送信：</strong></p>
+                <p>Enterキーでの誤送信を防止し、Ctrl+Enterで意図的に送信できるようになります。これまでの「まだ入力途中だったのに...」というストレスから解放されます。</p>
+            </div>
+
+            <div class="workflow-section">
+                <h3>📧 メール作成の自動化への道</h3>
+                <div class="mermaid">
+                    graph LR
+                        A[手動メール作成] --&gt; B[プロンプト活用]
+                        B --&gt; C[AIアシスタント作成]
+                        C --&gt; D[GPTs活用]
+                        D --&gt; E[完全自動化]
+                        
+                        style A fill:#E91E63,stroke:#333,stroke-width:2px,color:#fff
+                        style E fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon icon-story">📖</span>第2話：大量メール送信の課題</h2>
+            
+            <div class="story-episode">
+                <div class="story-title">📧 100通のお礼メール</div>
+                <p>部長からの突然の指示：「新商品の試食会参加者100名に、今日中にお礼メールを送ってくれ」</p>
+                <p>大吉さんは一人ひとりに心のこもったメールを書こうと思いましたが、100通も書いていたら他の仕事が全くできません...</p>
+            </div>
+
+            <h3>🎯 ミッション：AIアシスタント（GPTs）を作成</h3>
+            
+            <div class="workflow-section">
+                <h4>📋 具体的なケース</h4>
+                <p><strong>商品：</strong> 大津玄米のカリカリチップス</p>
+                <p><strong>送信先：</strong> 試食会参加者100名</p>
+                <p><strong>目的：</strong> 同じプロンプトを何度も入力する手間を省き、効率的にパーソナライズされたメールを作成</p>
+            </div>
+
+            <div class="tech-highlight">
+                <h4>🔧 GPTs（GPT Builder）について</h4>
+                <p><strong>無料版：</strong> ストアにある公開GPTsは利用可能</p>
+                <p><strong>作成：</strong> 自分専用のGPTsを作るにはChatGPT Plusの契約が必要</p>
+                <p><strong>メリット：</strong> 業務に特化したAIアシスタントを構築できる</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon icon-goal">🎯</span>まとめ：小さな成功体験の積み重ね</h2>
+            
+            <div class="workflow-section">
+                <h3>🌟 今日の学習ポイント</h3>
+                <div class="mermaid">
+                    graph TD
+                        A[タスク整理] --&gt; B[音声入力活用]
+                        B --&gt; C[Gemini連携機能]
+                        C --&gt; D[ChatGPT拡張機能]
+                        D --&gt; E[GPTs作成準備]
+                        E --&gt; F[業務効率化実現]
+                        
+                        style F fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h3>🚀 次のステップ</h3>
+                <p><span class="step-number">1</span><strong>今日学んだテクニックを一つでも実践</strong></p>
+                <p><span class="step-number">2</span><strong>音声入力でAIに相談する習慣をつける</strong></p>
+                <p><span class="step-number">3</span><strong>Geminiの拡張機能で予定とタスクを連携</strong></p>
+                <p><span class="step-number">4</span><strong>ChatGPTの誤送信防止拡張機能を導入</strong></p>
+                <p><span class="step-number">5</span><strong>業務に特化したGPTsの作成を検討</strong></p>
+            </div>
+
+            <div class="character-card">
+                <div class="character-name">🍀 大吉さんからのメッセージ</div>
+                <p>「最初は小さなステップから始めましょう。AIは決して難しいものではありません。皆さんと一緒に、一歩ずつ業務効率化を進めていきましょう！」</p>
+            </div>
+        </div>
+
+        <div class="section" style="text-align: center; background: linear-gradient(135deg, #4CAF50, #009688); color: white;">
+            <h2 style="color: white;">🌟 ご参加ありがとうございました！</h2>
+            <p style="font-size: 1.2em; margin-top: 15px;">小さな成功体験を積み重ねて、AI活用のプロフェッショナルを目指しましょう</p>
+        </div>
+    </div>
+
+
+</body></html>
